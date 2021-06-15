@@ -38,7 +38,9 @@ hint - you should be looking at the stage key inside of the objects
 */
 
 function getFinals(array) {
-   const finalGames = array.filter(item => item.Stage === `Final`);
+   const finalGames = array.filter(function(item){
+       return item.Stage === `Final`
+   });
    return finalGames
 }
 //console.log(`Task 2`, getFinals(fifaData));
@@ -55,7 +57,7 @@ function getYears(array, getFinalsCB) {
     return years;
 }
 
-//console.log(`Task 3`, getYears(getFinals, fifaData))
+//console.log(`Task 3`, getYears(fifaData, getFinals))
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function getWinners to do the following:  
@@ -90,9 +92,16 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(array, getYearsCB, getWinnersCB) {
+    const readout = [];
+    const year = getYearsCB(array, getFinals)
+    const winner = getWinnersCB(array, getFinals)
+    for (let i = 0; i < year.length; i++){
+        readout.push(`In ${year[i]}, ${winner[i]} won the world cup!`)
+    }
+    return readout
 }
+console.log(getWinnersByYear(fifaData, getYears, getWinners))
 
 
 
