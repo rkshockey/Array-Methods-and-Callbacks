@@ -10,23 +10,23 @@ const finals2014 = fifaData.filter(item => item.Year === 2014 && item.Stage === 
 
 //(a) Home Team name for 2014 world cup final
 
-console.log(finals2014[0][`Home Team Name`], `task 1a`)
+//console.log(finals2014[0][`Home Team Name`], `task 1a`)
 
 //(b) Away Team name for 2014 world cup final
 
-console.log(finals2014[0][`Away Team Name`], `task 1b`)
+//console.log(finals2014[0][`Away Team Name`], `task 1b`)
 
 //(c) Home Team goals for 2014 world cup final
 
-console.log(finals2014[0][`Home Team Goals`], `task 1c`)
+//console.log(finals2014[0][`Home Team Goals`], `task 1c`)
 
 //(d) Away Team goals for 2014 world cup final
 
-console.log(finals2014[0][`Away Team Goals`], `task 1c`)
+//console.log(finals2014[0][`Away Team Goals`], `task 1c`)
 
 //(e) Winner of 2014 world cup final */
 
-console.log(`task 1e`, finals2014[0][`Win conditions`])
+//console.log(`task 1e`, finals2014[0][`Win conditions`])
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -37,10 +37,11 @@ Use getFinals to do the following:
 hint - you should be looking at the stage key inside of the objects
 */
 
-function getFinals(/* code here */) {
-   /* code here */
+function getFinals(array) {
+   const finalGames = array.filter(item => item.Stage === `Final`);
+   return finalGames
 }
-
+console.log(`Task 2`, getFinals(fifaData));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
